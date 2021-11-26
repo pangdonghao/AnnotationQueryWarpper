@@ -1,45 +1,48 @@
 package com.gitee.ayezs;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.gitee.ayezs.annotation.Eq;
+import com.gitee.ayezs.annotation.WrapperAnnotation;
+import com.gitee.ayezs.marshaller.FindAnnotations;
+import com.gitee.ayezs.marshaller.WrapperBuilder;
+import com.gitee.ayezs.util.AnnotationUtil;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 基于注解的QueryWrapper
  * @param <T>
  */
 public class AnnotationQueryWrapper<T> extends QueryWrapper<T> {
-    public static List<Annotation> annotations = new ArrayList<>();
+//    public static List<Annotation> annotations = new ArrayList<>();
+
+    public static Map<WrapperAnnotation, WrapperBuilder> marshallerMap = new HashMap<>();
     public AnnotationQueryWrapper(T entity) {
         super(entity);
         Field[] declaredFields = entity.getClass().getDeclaredFields();
-        for (Field f :
+        for (Field field :
                 declaredFields) {
-            try {
-                Eq eq = f.getAnnotation(Eq.class);
-                if(eq != null){
-                    Object o = f.get(entity);
-                    if(o != null ){
-                        f.setAccessible(true);
-                        if(StringUtils.isNotBlank(eq.column())){
-                            eq(eq.column(), o);
-                        }else {
-                            eq(f.getName(), o);
-                        }
+            FindAnnotations findAnnotations = AnnotationUtil.findWrapperAnnotation(field);
+            WrapperAnnotation wrapperAnnotation = findAnnotations.getEnd();
+            if(wrapperAnnotation != null){
+                WrapperBuilder wrapperBuilder1 = marshallerMap.get(wrapperAnnotation);
+                if(wrapperBuilder1 != null){
+                    wrapperBuilder1.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
+                }else {
+                    WrapperBuilder wrapperBuilder = null;
+                    try {
+                        wrapperBuilder = wrapperAnnotation.marshaller().newInstance();
+                        marshallerMap.put(wrapperAnnotation, wrapperBuilder);
+                        wrapperBuilder.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
                     }
                 }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
             }
         }
     }
 
-    public static void addAnnotation(Annotation a){
-        annotations.add(a);
-    }
 }

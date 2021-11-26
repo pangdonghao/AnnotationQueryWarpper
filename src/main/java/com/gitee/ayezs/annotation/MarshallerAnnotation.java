@@ -1,6 +1,6 @@
 package com.gitee.ayezs.annotation;
 
-import com.gitee.ayezs.marshaller.Marshaller;
+import com.gitee.ayezs.marshaller.WrapperBuilder;
 
 /**
  * @author: 庞冬皓
@@ -8,5 +8,5 @@ import com.gitee.ayezs.marshaller.Marshaller;
  */
 public @interface MarshallerAnnotation {
     String column();
-    Class<Marshaller> marshaller();
+    Class<WrapperBuilder> marshaller();
 }

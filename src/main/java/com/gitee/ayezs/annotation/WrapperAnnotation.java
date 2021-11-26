@@ -1,6 +1,6 @@
 package com.gitee.ayezs.annotation;
 
-import com.gitee.ayezs.marshaller.Marshaller;
+import com.gitee.ayezs.marshaller.WrapperBuilder;
 
 import java.lang.annotation.*;
 
@@ -9,9 +9,10 @@ import java.lang.annotation.*;
  * @description
  * @date: 2021/10/2 15:29
  */
-@Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+@Target({ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
-public @interface WrapperAnnotation {
-
+public @interface WrapperAnnotation{
+    Class<? extends WrapperBuilder> marshaller();
+    String methodName();
 }
