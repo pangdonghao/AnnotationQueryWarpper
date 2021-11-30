@@ -11,7 +11,6 @@ import java.lang.annotation.Target;
 /**
  * 大于
  * @author: 庞冬皓
- * @date: 2021/10/2 15:03
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

@@ -11,7 +11,6 @@ import java.lang.annotation.Target;
 /**
  * 大于等于
  * @author: 庞冬皓
- * @date: 2021/10/2 15:03
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -19,7 +18,6 @@ import java.lang.annotation.Target;
 public @interface Ge {
     /**
      * 字段名
-     * @return
      */
     String column() default "";
 }

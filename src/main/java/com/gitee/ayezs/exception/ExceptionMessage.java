@@ -5,7 +5,7 @@ package com.gitee.ayezs.exception;
  * 常用异常
  *
  * @author tengchong
- * @date 2018/10/31
+ *  2018/10/31
  **/
 public class ExceptionMessage {
     // 未知错误

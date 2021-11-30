@@ -18,7 +18,7 @@ public class CommonWrapperBuild implements WrapperBuilder {
             Object value = field.get(o);
             if(value != null ){
                 Method method = queryWrapper.getClass().getMethod(methodName, Object.class, Object.class);
-                method.invoke(queryWrapper, field.getName(), value);
+                method.invoke(queryWrapper, StringUtils.camelToUnderline(field.getName()), value);
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();

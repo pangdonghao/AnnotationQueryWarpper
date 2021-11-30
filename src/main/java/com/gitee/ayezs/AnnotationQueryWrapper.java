@@ -12,7 +12,6 @@ import java.util.Map;
 
 /**
  * 基于注解的QueryWrapper
- * @param <T>
  */
 public class AnnotationQueryWrapper<T> extends QueryWrapper<T> {
 //    public static List<Annotation> annotations = new ArrayList<>();

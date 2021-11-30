@@ -1,6 +1,5 @@
 package com.gitee.ayezs.util;
 
-import com.gitee.ayezs.AAA;
 import com.gitee.ayezs.annotation.WrapperAnnotation;
 import com.gitee.ayezs.marshaller.FindAnnotations;
 
@@ -59,7 +58,7 @@ public class AnnotationUtil {
     /**
      * 只有java自带的注解
      */
-    public static boolean isJavaAnnotations(Annotation type) {
+    private static boolean isJavaAnnotations(Annotation type) {
         return type.annotationType().getName().startsWith("java.");
     }
 
