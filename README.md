@@ -11,7 +11,7 @@ AnnotationQueryWarper是一个mybatis plus的扩展
 1. 引用方式：
 
 ```xml
-        <dependency>
+<dependency>
     <groupId>com.gitee.ayezs</groupId>
     <artifactId>AnnotationQueryWrapper</artifactId>
     <version>1.0.0</version>
