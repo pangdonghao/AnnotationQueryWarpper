@@ -23,21 +23,23 @@ public class AnnotationQueryWrapper<T> extends QueryWrapper<T> {
         for (Field field :
                 declaredFields) {
             FindAnnotations findAnnotations = AnnotationUtil.findWrapperAnnotation(field);
-            WrapperAnnotation wrapperAnnotation = findAnnotations.getEnd();
-            if(wrapperAnnotation != null){
-                WrapperBuilder wrapperBuilder1 = marshallerMap.get(wrapperAnnotation);
-                if(wrapperBuilder1 != null){
-                    wrapperBuilder1.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
-                }else {
-                    WrapperBuilder wrapperBuilder = null;
-                    try {
-                        wrapperBuilder = wrapperAnnotation.marshaller().newInstance();
-                        marshallerMap.put(wrapperAnnotation, wrapperBuilder);
-                        wrapperBuilder.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
-                    } catch (InstantiationException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+            if(findAnnotations != null){
+                WrapperAnnotation wrapperAnnotation = findAnnotations.getEnd();
+                if(wrapperAnnotation != null){
+                    WrapperBuilder wrapperBuilder1 = marshallerMap.get(wrapperAnnotation);
+                    if(wrapperBuilder1 != null){
+                        wrapperBuilder1.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
+                    }else {
+                        WrapperBuilder wrapperBuilder = null;
+                        try {
+                            wrapperBuilder = wrapperAnnotation.marshaller().newInstance();
+                            marshallerMap.put(wrapperAnnotation, wrapperBuilder);
+                            wrapperBuilder.build(this, field, entity, findAnnotations.getStart(), wrapperAnnotation.methodName());
+                        } catch (InstantiationException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
