@@ -17,9 +17,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "notLike", marshaller = CommonWrapperBuild.class)
 public @interface Le {
-    /**
-     * 字段名
-     * @return
-     */
-    String column() default "";
 }

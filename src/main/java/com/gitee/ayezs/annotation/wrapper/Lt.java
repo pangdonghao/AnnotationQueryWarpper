@@ -17,9 +17,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "lt", marshaller = CommonWrapperBuild.class)
 public @interface Lt {
-    /**
-     * 字段名
-     * @return
-     */
-    String column() default "";
 }

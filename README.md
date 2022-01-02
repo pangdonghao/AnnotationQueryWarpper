@@ -1,27 +1,29 @@
-# 注解AnnotationQueryWarpper
+# AnnotationQueryWarpper
 
 #### 介绍
 AnnotationQueryWarper是一个mybatis plus的扩展
 可通过注解方式生成QueryWarper
 
-#### 使用说明
-引用方式： 
+[demo地址](https://gitee.com/ayezs/annotation-query-warpper-demo)
 
-```
+
+#### 使用说明
+1. 引用方式： 
+
+```xml
         <dependency>
             <groupId>com.gitee.ayezs</groupId>
             <artifactId>AnnotationQueryWrapper</artifactId>
-            <version>0.1.0</version>
+            <version>1.0.0</version>
         </dependency>
-
 ```
 
+2. 在条件中加上 在querywapper中需要调用的方法对应的注解
+3. 在
 
-#### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+
+
 
 #### 参与贡献
 

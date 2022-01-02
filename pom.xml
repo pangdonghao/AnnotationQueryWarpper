@@ -6,7 +6,7 @@
 
     <groupId>com.gitee.ayezs</groupId>
     <artifactId>AnnotationQueryWrapper</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>1.0.0</version>
 
 
     <name>AnnotationQueryWrapper</name>
@@ -85,7 +85,7 @@
                 <version>2.9.1</version>
                 <configuration>
 <!--                    <failOnError>false</failOnError>-->
-                    <doclet>none</doclet>
+<!--                    <doclet>none</doclet>-->
                 </configuration>
                 <executions>
                     <execution>

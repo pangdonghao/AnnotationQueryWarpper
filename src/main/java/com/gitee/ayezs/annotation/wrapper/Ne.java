@@ -17,9 +17,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "ne", marshaller = CommonWrapperBuild.class)
 public @interface Ne {
-    /**
-     * 字段名
-     * @return
-     */
-    String column() default "";
 }

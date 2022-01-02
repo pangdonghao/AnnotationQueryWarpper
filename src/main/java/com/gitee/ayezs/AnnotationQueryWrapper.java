@@ -18,7 +18,7 @@ public class AnnotationQueryWrapper<T> extends QueryWrapper<T> {
 
     public static Map<WrapperAnnotation, WrapperBuilder> marshallerMap = new HashMap<>();
     public AnnotationQueryWrapper(T entity) {
-        super(entity);
+        super();
         Field[] declaredFields = entity.getClass().getDeclaredFields();
         for (Field field :
                 declaredFields) {

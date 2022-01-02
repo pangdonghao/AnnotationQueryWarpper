@@ -16,9 +16,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "eq", marshaller = CommonWrapperBuild.class)
 public @interface Eq {
-    /**
-     * 字段名
-     * @return 字段名
-     */
-    String column() default "";
+    
 }

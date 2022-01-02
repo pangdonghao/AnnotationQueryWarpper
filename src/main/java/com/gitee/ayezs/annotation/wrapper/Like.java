@@ -17,9 +17,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "like",marshaller = CommonWrapperBuild.class)
 public @interface Like {
-    /**
-     * 字段名
-     * @return
-     */
-    String column();
 }

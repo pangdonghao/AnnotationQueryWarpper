@@ -16,8 +16,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @WrapperAnnotation(methodName = "ge", marshaller = CommonWrapperBuild.class)
 public @interface Ge {
-    /**
-     * 字段名
-     */
-    String column() default "";
 }
