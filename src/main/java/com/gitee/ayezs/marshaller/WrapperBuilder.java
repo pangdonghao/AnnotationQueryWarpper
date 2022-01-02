@@ -1,10 +1,6 @@
 package com.gitee.ayezs.marshaller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.gitee.ayezs.annotation.Eq;
-import com.gitee.ayezs.annotation.WrapperAnnotation;
-import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

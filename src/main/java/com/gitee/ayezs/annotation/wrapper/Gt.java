@@ -1,4 +1,4 @@
-package com.gitee.ayezs.annotation;
+package com.gitee.ayezs.annotation.wrapper;
 
 import com.gitee.ayezs.marshaller.CommonWrapperBuild;
 
@@ -9,17 +9,16 @@ import java.lang.annotation.Target;
 
 
 /**
- *
+ * 大于
  * @author: 庞冬皓
- * : 2021/10/2 15:03
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@WrapperAnnotation(methodName = "likeRight",marshaller = CommonWrapperBuild.class)
-public @interface LikeRight {
+@WrapperAnnotation(methodName = "gt", marshaller = CommonWrapperBuild.class)
+public @interface Gt {
     /**
      * 字段名
      * @return
      */
-    String column();
+    String column() default "";
 }

@@ -1,7 +1,7 @@
 package com.gitee.ayezs;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.gitee.ayezs.annotation.WrapperAnnotation;
+import com.gitee.ayezs.annotation.wrapper.WrapperAnnotation;
 import com.gitee.ayezs.marshaller.FindAnnotations;
 import com.gitee.ayezs.marshaller.WrapperBuilder;
 import com.gitee.ayezs.util.AnnotationUtil;

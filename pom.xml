@@ -41,6 +41,7 @@
         <!--不再支持源选项 5。请使用 6 或更高版本。 不再支持目标选项 1.5。请使用 1.6 或更高版本-->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
     </properties>
     <dependencies>
         <dependency>

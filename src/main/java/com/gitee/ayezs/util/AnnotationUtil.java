@@ -1,6 +1,6 @@
 package com.gitee.ayezs.util;
 
-import com.gitee.ayezs.annotation.WrapperAnnotation;
+import com.gitee.ayezs.annotation.wrapper.WrapperAnnotation;
 import com.gitee.ayezs.marshaller.FindAnnotations;
 
 import java.lang.annotation.Annotation;

@@ -1,6 +1,6 @@
 package com.gitee.ayezs.marshaller;
 
-import com.gitee.ayezs.annotation.WrapperAnnotation;
+import com.gitee.ayezs.annotation.wrapper.WrapperAnnotation;
 
 import java.lang.annotation.Annotation;
 

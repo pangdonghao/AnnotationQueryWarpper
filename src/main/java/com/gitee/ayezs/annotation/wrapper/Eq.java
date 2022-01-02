@@ -1,4 +1,4 @@
-package com.gitee.ayezs.annotation;
+package com.gitee.ayezs.annotation.wrapper;
 
 import com.gitee.ayezs.marshaller.CommonWrapperBuild;
 
@@ -9,16 +9,16 @@ import java.lang.annotation.Target;
 
 
 /**
- * 大于
+ * 等于 =
  * @author: 庞冬皓
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@WrapperAnnotation(methodName = "gt", marshaller = CommonWrapperBuild.class)
-public @interface Gt {
+@WrapperAnnotation(methodName = "eq", marshaller = CommonWrapperBuild.class)
+public @interface Eq {
     /**
      * 字段名
-     * @return
+     * @return 字段名
      */
     String column() default "";
 }

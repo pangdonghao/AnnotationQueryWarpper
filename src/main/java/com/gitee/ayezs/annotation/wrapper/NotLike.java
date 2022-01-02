@@ -1,4 +1,4 @@
-package com.gitee.ayezs.annotation;
+package com.gitee.ayezs.annotation.wrapper;
 
 import com.gitee.ayezs.marshaller.CommonWrapperBuild;
 
